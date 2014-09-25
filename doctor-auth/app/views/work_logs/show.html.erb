@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Doctor:</b>
+  <%= @work_log.doctor %>
+</p>
+
+<p>
+  <b>Hosipital:</b>
+  <%= @work_log.hosipital %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @work_log.title %>
+</p>
+
+<p>
+  <b>Certificate:</b>
+  <%= @work_log.certificate %>
+</p>
+
+
+<%= link_to 'Edit', edit_work_log_path(@work_log) %> |
+<%= link_to 'Back', work_logs_path %>

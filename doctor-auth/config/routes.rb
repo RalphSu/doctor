@@ -1,5 +1,9 @@
 UserAuth::Application.routes.draw do
 
+  resources :work_logs
+
+  resources :hospitals
+
   resources :doctors
 
   match ':controller(/:action(/:id))(.:format)'
