@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Doctor Check</title>
+  <title><%=t(:title)%></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "bootstrap.min", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "bootstrap.min" %>
   <%= csrf_meta_tags %>
 </head>
+<style type="text/css">
+body { padding-top: 50px; }
+</style>
 <body>
-	<div class="Main_Header">
-		<h1>Doctor Check</h1>
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<p class="navbar-text"><%=t(:title)%></p>
 		<%unless session[:user_id]%>
-			<ul class="nav">
-				<li><%= link_to :Signup , :signup, class: "nav_links"%></li>|
+			<ul class="nav nav-pills">
+				<li><%= link_to :Signup , :signup, class: "nav_links"%></li>
 				<li><%= link_to :Login , :login, class: "nav_links"%></li>	
 			</ul>
 		<%else%>
-			<ul class="nav">
-				<li><%= link_to :Home , :home, class: "nav_links" %> |</li>
-				<li><%= link_to :Profile , :profile, class: "nav_links" %> |</li>
-				<li><%= link_to :Setting , :setting, class: "nav_links" %> |</li>
+			<ul class="nav nav-pills">
+				<li><%= link_to :Home , :home, class: "nav_links" %></li>
+				<li><%= link_to :Profile , :profile, class: "nav_links" %></li>
 				<li><%= link_to :Logout , :logout, class: "nav_links" %></li>	
 			</ul>
 		<%end%>

@@ -34,6 +34,9 @@ class User < ActiveRecord::Base
     encrypted_password == BCrypt::Engine.hash_secret(login_password, salt)
   end
 
+  def isAdmin
+    return true
+  end
 
 
   def encrypt_password

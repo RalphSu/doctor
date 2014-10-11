@@ -1,4 +1,8 @@
+#encoding=UTF-8
 class DoctorsController < ApplicationController
+
+  before_filter :authenticate_user
+
   # GET /doctors
   # GET /doctors.json
   def index

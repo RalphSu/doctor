@@ -1,9 +1,15 @@
-<h1>Listing doctors</h1>
+<div>
+<label>Listing doctors</label>
 
-<table border="1">
+<div class="pull-right">
+  <%= link_to 'New Doctor', new_doctor_path %>
+</div>
+<div>
+<table border="1" class="table table-bordered table-condensed">
   <tr>
     <th>Name</th>
     <th>Phone</th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,12 +20,17 @@
     <td><%= doctor.name %></td>
     <td><%= doctor.phone %></td>
     <td><%= link_to 'Show', doctor %></td>
+    <% if @current_user.isAdmin() %>
+      <td><%= link_to 'Review', edit_doctor_path(doctor) %></td>
+    <% else %>
+      <td>Reviewed</td>
+    <% end %>
     <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
     <td><%= link_to 'Destroy', doctor, confirm: 'Are you sure?', method: :delete %></td>
+
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Doctor', new_doctor_path %>
