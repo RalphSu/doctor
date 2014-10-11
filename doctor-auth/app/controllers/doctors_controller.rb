@@ -6,7 +6,8 @@ class DoctorsController < ApplicationController
   # GET /doctors
   # GET /doctors.json
   def index
-    @doctors = Doctor.all
+    search = params[:search]
+    @doctors = Doctor.paginate(:page=>params[:page], :per_page=>20)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,1 +1,9 @@
-<h2 class='User_Header'><%=@current_user.username%> Home <h2>
+<div class="jumbotron">
+	<p>Input name to search: </p>
+  <form class="navbar-form" role="form">
+    <div>
+      <input type="text" name="search" class="form-control" placeholder="<%=t(:search_tip)%>"></input>
+      <button type="submit" class="btn btn-primary"><%=t(:submit)%></button>
+    </div>
+  </form>
+</div>

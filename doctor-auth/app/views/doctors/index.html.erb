@@ -1,10 +1,21 @@
-<div>
-<label>Listing doctors</label>
 
-<div class="pull-right">
-  <%= link_to 'New Doctor', new_doctor_path %>
-</div>
+<!-- search box -->
 <div>
+  <form class="navbar-form">
+    <div class="form-group">
+      <input type="text" name="search" class="input-appended span10" placeholder="<%=t(:search_tip)%>"></input>
+    </div>
+    <button type="submit" class="btn btn-primary btn-xs"><%=t(:submit)%></button>
+  </form>
+</div>
+
+<div>
+  <label>Listing doctors</label>
+  <div class="pull-right">
+    <%= link_to 'New Doctor', new_doctor_path %>
+  </div>
+<div>
+
 <table border="1" class="table table-bordered table-condensed">
   <tr>
     <th>Name</th>
@@ -30,6 +41,10 @@
 
   </tr>
 <% end %>
+<div class="digg_pagination">
+    <%=will_paginate @doctors%>
+</div>
+
 </table>
 
 <br />

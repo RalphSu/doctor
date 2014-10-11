@@ -4,6 +4,7 @@
   <title><%=t(:title)%></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag    "bootstrap.min", :media => "all" %>
+  <%= stylesheet_link_tag    "pagination", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "bootstrap.min" %>
   <%= csrf_meta_tags %>
@@ -12,21 +13,23 @@
 body { padding-top: 50px; }
 </style>
 <body>
-	<div class="navbar navbar-fixed-top navbar-inverse">
-		<p class="navbar-text"><%=t(:title)%></p>
-		<%unless session[:user_id]%>
-			<ul class="nav nav-pills">
-				<li><%= link_to :Signup , :signup, class: "nav_links"%></li>
-				<li><%= link_to :Login , :login, class: "nav_links"%></li>	
-			</ul>
-		<%else%>
-			<ul class="nav nav-pills">
-				<li><%= link_to :Home , :home, class: "nav_links" %></li>
-				<li><%= link_to :Profile , :profile, class: "nav_links" %></li>
-				<li><%= link_to :Logout , :logout, class: "nav_links" %></li>	
-			</ul>
-		<%end%>
-	</div>
+	<nav class="navbar navbar-fixed-top navbar-inverse">
+		<div class="container-fluid">
+			<p class="navbar-brand"><%=t(:title)%></p>
+			<%unless session[:user_id]%>
+				<ul class="nav nav-pills">
+					<li><%= link_to :Signup , :signup, class: "nav_links"%></li>
+					<li><%= link_to :Login , :login, class: "nav_links"%></li>	
+				</ul>
+			<%else%>
+				<ul class="nav nav-pills">
+					<li><%= link_to :Home , :home, class: "nav_links" %></li>
+					<li><%= link_to :Profile , :profile, class: "nav_links" %></li>
+					<li><%= link_to :Logout , :logout, class: "nav_links" %></li>	
+				</ul>
+			<%end%>
+		</div>
+	</nav>
 	<% if flash[:color]== "valid" %>
 		<div class="valid_notice">
 			<p><%= flash[:notice]%></p>
@@ -42,5 +45,9 @@ body { padding-top: 50px; }
 	<%end%>
 <%= yield %>
 
+
+	<footer>
+		<p><%=t(:footer_copyright)%></p>
+	</footer>
 </body>
 </html>

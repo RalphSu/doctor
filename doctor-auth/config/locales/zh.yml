@@ -4,3 +4,6 @@
 zh:
   hello: "Hello world"
   title: 医疗人员信息黄页
+  search_tip: input name to search
+  submit: submit
+  footer_copyright: ©Powered by Ralph
