@@ -16,18 +16,21 @@ body { padding-top: 50px; }
 	<nav class="navbar navbar-fixed-top navbar-inverse">
 		<div class="container-fluid">
 			<p class="navbar-brand"><%=t(:title)%></p>
+		<div class="collapse navbar-collapse">
 			<%unless session[:user_id]%>
-				<ul class="nav nav-pills">
+				<ul class="nav navbar-nav navbar-right">
 					<li><%= link_to :Signup , :signup, class: "nav_links"%></li>
 					<li><%= link_to :Login , :login, class: "nav_links"%></li>	
 				</ul>
 			<%else%>
-				<ul class="nav nav-pills">
+				<ul class="nav navbar-nav navbar-right">
 					<li><%= link_to :Home , :home, class: "nav_links" %></li>
 					<li><%= link_to :Profile , :profile, class: "nav_links" %></li>
 					<li><%= link_to :Logout , :logout, class: "nav_links" %></li>	
 				</ul>
 			<%end%>
+		</div>
+
 		</div>
 	</nav>
 	<% if flash[:color]== "valid" %>

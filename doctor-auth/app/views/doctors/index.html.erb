@@ -5,7 +5,7 @@
     <div class="form-group">
       <input type="text" name="search" class="input-appended span10" placeholder="<%=t(:search_tip)%>"></input>
     </div>
-    <button type="submit" class="btn btn-primary btn-xs"><%=t(:submit)%></button>
+    <button type="submit" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-search"></span><%=t(:submit)%></button>
   </form>
 </div>
 
@@ -18,8 +18,10 @@
 
 <table border="1" class="table table-bordered table-condensed">
   <tr>
-    <th>Name</th>
-    <th>Phone</th>
+    <th><%=t(:name)%></th>
+    <th><%=t(:phone)%></th>
+    <th><%=t(:job_title)%></th>
+    <th><%=t(:department)%></th>
     <th></th>
     <th></th>
     <th></th>
@@ -30,6 +32,8 @@
   <tr>
     <td><%= doctor.name %></td>
     <td><%= doctor.phone %></td>
+    <td><%= doctor.job_title %></td>
+    <td><%= doctor.department %></td>
     <td><%= link_to 'Show', doctor %></td>
     <% if @current_user.isAdmin() %>
       <td><%= link_to 'Review', edit_doctor_path(doctor) %></td>
