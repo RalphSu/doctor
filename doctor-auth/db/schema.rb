@@ -11,11 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140924103941) do
+ActiveRecord::Schema.define(:version => 20140925003321) do
 
   create_table "doctors", :force => true do |t|
     t.string   "name"
     t.string   "phone"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "certificate"
+  end
+
+  create_table "hospitals", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -27,6 +35,15 @@ ActiveRecord::Schema.define(:version => 20140924103941) do
     t.string   "salt"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+  end
+
+  create_table "work_logs", :force => true do |t|
+    t.integer  "doctor_id"
+    t.integer  "hosipital_id"
+    t.string   "title"
+    t.string   "certificate"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end

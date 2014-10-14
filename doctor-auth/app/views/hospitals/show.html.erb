@@ -1,15 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<div class="panel panel-primary">
 <p>
-  <b>Name:</b>
+  <b><%=t(:hospital_header_name)%>:</b>
   <%= @hospital.name %>
 </p>
 
 <p>
-  <b>Address:</b>
+  <b><%=t(:hospital_header_address)%>:</b>
   <%= @hospital.address %>
 </p>
-
-
-<%= link_to 'Edit', edit_hospital_path(@hospital) %> |
-<%= link_to 'Back', hospitals_path %>
+</div>
+<%edit_label=t(:edit)%>
+<%back_label=t(:back)%>
+<%= link_to edit_label, edit_hospital_path(@hospital) %> |
+<%= link_to back_label, hospitals_path %>

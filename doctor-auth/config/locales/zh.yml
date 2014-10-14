@@ -7,3 +7,25 @@ zh:
   search_tip: input name to search
   submit: submit
   footer_copyright: ©Powered by Ralph
+  hospital_listing: 医院列表
+  hospital_header_name: 医院名称
+  hospital_header_address: 医院地址
+  hospital_new: 新建医院
+  edit: 编辑
+  destroy: 删除
+  back: 后退
+  hospital_edit_label: 编辑医院信息
+  show_label: 浏览
+
+  helpers:
+    label:
+      hospital:
+        name: 医院名称
+        address: 医院地址
+        create: "sfasfd"
+    submit:
+      create: 创建
+      update: 保存
+      hospital:
+          create: 新建医院
+          update: 更新医院

@@ -1,25 +1,32 @@
-<h1>Listing hospitals</h1>
+<h1><%=t(:hospital_listing)%></h1>
 
-<table>
+<table border="1" class="table table-bordered table-condensed">
   <tr>
-    <th>Name</th>
-    <th>Address</th>
-    <th></th>
+    <th><%=t(:hospital_header_name)%></th>
+    <th><%=t(:hospital_header_address)%></th>
+    <!-- <th></th> -->
     <th></th>
     <th></th>
   </tr>
 
+<% edit_label = t(:edit)%>
+<% destroy_label = t(:destroy)%>
 <% @hospitals.each do |hospital| %>
   <tr>
     <td><%= hospital.name %></td>
     <td><%= hospital.address %></td>
-    <td><%= link_to 'Show', hospital %></td>
-    <td><%= link_to 'Edit', edit_hospital_path(hospital) %></td>
-    <td><%= link_to 'Destroy', hospital, confirm: 'Are you sure?', method: :delete %></td>
+    <!-- <td><%= link_to 'Show', hospital %></td> -->
+    <td><%= link_to edit_label, edit_hospital_path(hospital) %></td>
+    <td><%= link_to destroy_label, hospital, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
+<div class="digg_pagination">
+    <%=will_paginate @hospitals%>
+</div>
+
 <br />
 
-<%= link_to 'New Hospital', new_hospital_path %>
+<% new_label = t(:hospital_new)%>
+<%= link_to new_label, new_hospital_path %>
