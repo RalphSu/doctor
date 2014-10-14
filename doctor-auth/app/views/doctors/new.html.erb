@@ -1,5 +1,6 @@
-<h1>New doctor</h1>
+<h1><%=t(:new_doctor)%></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', doctors_path %>
+<%back_label=t(:back)%>
+<%= link_to back_label, doctors_path %>

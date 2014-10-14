@@ -1,15 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @doctor.name %>
-</p>
+<div class="panel panel-primary">
+	<p>
+	  <b><%=t(:doctor_name)%></b>
+	  <%= @doctor.name %>
+	</p>
 
-<p>
-  <b>Phone:</b>
-  <%= @doctor.phone %>
-</p>
+	<p>
+	  <b><%=t(:doctor_phone%></b>
+	  <%= @doctor.phone %>
+	</p>
 
+	<p>
+	  <b><%=t(:doctor_certificate%></b>
+	  <%= @doctor.certificate %>
+	</p>
+	<p>
+	  <b><%=t(:doctor_job_title%></b>
+	  <%= @doctor.job_title %>
+	</p>
+	<p>
+	  <b><%=t(:doctor_deparment%></b>
+	  <%= @doctor.department %>
+	</p>
 
-<%= link_to 'Edit', edit_doctor_path(@doctor) %> |
-<%= link_to 'Back', doctors_path %>
+	<p>
+	  <b><%=t(:doctor_record_status%></b>
+	  <%= @doctor.record_status %>
+	</p>
+
+	<p>
+	  <b><%=t(:doctor_overall_rate%></b>
+	  <%= @doctor.overall_rate %>
+	</p>
+</div>
+
+<%edit_label=t(:edit)%>
+<%back_label=t(:back)%>
+<%= link_to edit_label, edit_doctor_path(@doctor) %> |
+<%= link_to back_label, doctors_path %>
