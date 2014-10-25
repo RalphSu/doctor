@@ -2,10 +2,10 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 zh:
-  hello: "Hello world"
   title: 医疗人员信息黄页
-  search_tip: input name to search
-  submit: submit
+  search_tip: 输入名字查找
+  submit: 提交
+  search: 给我搜
   footer_copyright: ©Powered by Ralph
   hospital_listing: 医院列表
   hospital_header_name: 医院名称
@@ -16,16 +16,34 @@ zh:
   back: 后退
   hospital_edit_label: 编辑医院信息
   show_label: 浏览
-  doctor_new: 新建
+  doctor_new: 新建医生信息
   list_doctor: 医生列表
   edit_doctor: 编辑医生信息
+  show_doctor: 医生信息
+
+  doctor_name: 名称
+  doctor_phone: 电话
+  doctor_certificate: 证书
+  doctor_job_title: 职位
+  doctor_department: 科室
+  doctor_record_status: 认证？
+  doctor_overall_rate: 总评
 
   helpers:
     label:
       hospital:
         name: 医院名称
         address: 医院地址
-        create: "sfasfd"
+        create: 新建医院
+      doctor:
+        name: 名称
+        address: 地址
+        phone: 电话
+        certificate: 证书
+        job_title: 职位
+        department: 科室
+        record_status: 认证？
+        overall_rate: 总评
     submit:
       create: 创建
       update: 保存

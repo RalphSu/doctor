@@ -2,6 +2,21 @@
 
 <%= render 'form' %>
 
+<!-- work log listing -->
+<div class="panel panel-default">
+	<div class="panel-body">
+		<h2/>
+		<%@doctor.worklogs.each do |e|%>
+			<%= e.hosipital_name %>
+			<%= e.start_date %>
+			<%= e.end_date %>
+			<%= e.title %>
+			<%= e.rate %>
+		<%end%>
+	</div>
+</div>
+<%= link_to "Add Work Log", @doctor, :class=>"pull-right" %>
+
 <%show_label=t(:show_label)%>
 <%back_label=t(:back)%>
 <%= link_to show_label, @doctor %> |

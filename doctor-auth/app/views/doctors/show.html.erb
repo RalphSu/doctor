@@ -1,38 +1,45 @@
 <p id="notice"><%= notice %></p>
 
 <div class="panel panel-primary">
-	<p>
-	  <b><%=t(:doctor_name)%></b>
-	  <%= @doctor.name %>
-	</p>
+	<div class="panel-heading"><%=t(:show_doctor)%></div>
+	<div class="panel-body">
+		<p>
+		  <b><%=t(:doctor_name)%>: </b>
+		  <%= @doctor.name %>
+		</p>
 
-	<p>
-	  <b><%=t(:doctor_phone%></b>
-	  <%= @doctor.phone %>
-	</p>
+		<p>
+		  <b><%=t(:doctor_phone)%>: </b>
+		  <%= @doctor.phone %>
+		</p>
 
-	<p>
-	  <b><%=t(:doctor_certificate%></b>
-	  <%= @doctor.certificate %>
-	</p>
-	<p>
-	  <b><%=t(:doctor_job_title%></b>
-	  <%= @doctor.job_title %>
-	</p>
-	<p>
-	  <b><%=t(:doctor_deparment%></b>
-	  <%= @doctor.department %>
-	</p>
+		<p>
+		  <b><%=t(:doctor_certificate)%>: </b>
+		  <%= @doctor.certificate %>
+		</p>
+		<p>
+		  <b><%=t(:doctor_job_title)%>: </b>
+		  <%= @doctor.job_title %>
+		</p>
+		<p>
+		  <b><%=t(:doctor_department)%>: </b>
+		  <%= @doctor.department %>
+		</p>
 
-	<p>
-	  <b><%=t(:doctor_record_status%></b>
-	  <%= @doctor.record_status %>
-	</p>
+		<div class="panel panel-primary">
+			<div class="panel-body">
+				<p>
+				  <b><%=t(:doctor_record_status)%>: </b>
+				  <%= @doctor.record_status %>
+				</p>
 
-	<p>
-	  <b><%=t(:doctor_overall_rate%></b>
-	  <%= @doctor.overall_rate %>
-	</p>
+				<p>
+				  <b><%=t(:doctor_overall_rate)%>: </b>
+				  <%= @doctor.overall_rate %>
+				</p>
+			</div>
+		</div>
+	</div>
 </div>
 
 <%edit_label=t(:edit)%>
