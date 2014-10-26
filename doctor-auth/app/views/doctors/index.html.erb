@@ -1,15 +1,20 @@
 
 <!-- search box -->
-<div>
-  <form class="navbar-form">
+
+  <form class="form-inline">
     <div class="form-group">
-      <input type="text" name="search" class="input-appended span10" placeholder="<%=t(:search_tip)%>"></input>
+      <% search = params[:search]%>
+      <% if search.blank? %>
+        <input type="text" name="search" class="input-appended span10" placeholder="<%=t(:search_tip)%>"></input>
+      <% else %>
+        <input type="text" name="search" class="input-appended span10" placeholder="<%=t(:search_tip)%>" value="<%=search%>"></input>
+      <% end %>
     </div>
     <button type="submit" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-search"></span><%=t(:search)%></button>
   </form>
-</div>
 
-<div>
+<hr/>
+<div class="">
   <label><%=t(:list_doctor)%></label>
   <div class="pull-right">
     <% doctor_new=t(:doctor_new) %>
@@ -22,11 +27,9 @@
     <th><%=t(:doctor_name)%></th>
     <th><%=t(:doctor_phone)%></th>
     <th><%=t(:doctor_job_title)%></th>
-    <th><%=t(:doctor_department)%></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th><%=t(:doctor_certificate)%></th>
+    <th><%=t(:doctor_overall_rate)%></th>
+    <th width=120></th>
   </tr>
 
 <% @doctors.each do |doctor| %>
@@ -34,15 +37,15 @@
     <td><%= doctor.name %></td>
     <td><%= doctor.phone %></td>
     <td><%= doctor.job_title %></td>
-    <td><%= doctor.department %></td>
-    <td><%= link_to 'Show', doctor %></td>
-    <% if @current_user.isAdmin() %>
-      <td><%= link_to 'Review', edit_doctor_path(doctor) %></td>
-    <% else %>
-      <td>Reviewed</td>
-    <% end %>
-    <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
-    <td><%= link_to 'Destroy', doctor, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= doctor.certificate %></td>
+    <td><%= doctor.overall_rate %></td>
+    <td>
+    <% show=t(:Show)%>
+    <% edit=t(:Edit)%>
+    <% destroy=t(:Destroy)%>
+    <%= link_to show, doctor %>
+    <%= link_to edit, edit_doctor_path(doctor) %>
+    <%= link_to destroy, doctor, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 <div class="digg_pagination">

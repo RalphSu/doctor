@@ -10,7 +10,7 @@
   <%= csrf_meta_tags %>
 </head>
 <style type="text/css">
-body { padding-top: 50px; }
+body { padding: 50px 50px 50px 50px;   }
 </style>
 <body>
 	<nav class="navbar navbar-fixed-top navbar-inverse">
@@ -24,9 +24,11 @@ body { padding-top: 50px; }
 				</ul>
 			<%else%>
 				<ul class="nav navbar-nav navbar-right">
-					<li><%= link_to :Home , :home, class: "nav_links" %></li>
-					<li><%= link_to :Profile , :profile, class: "nav_links" %></li>
-					<li><%= link_to :Logout , :logout, class: "nav_links" %></li>	
+					<li><%= link_to t(:Home) , :home, class: "nav_links" %></li>
+					<!-- <li><%= link_to t(:Profile) , :profile, class: "nav_links" %></li> -->
+					<li><%= link_to t(:Doctors) , {:controller => "doctors", :action => "index"}, class: "nav_links" %></li>
+					<li><%= link_to t(:Hospitals) , {:controller => "hospitals", :action => "index"}, class: "nav_links" %></li>
+					<li><%= link_to t(:Logout) , :logout, class: "nav_links" %></li>	
 				</ul>
 			<%end%>
 		</div>
@@ -49,6 +51,7 @@ body { padding-top: 50px; }
 <%= yield %>
 
 
+<hr/>
 	<footer>
 		<p><%=t(:footer_copyright)%></p>
 	</footer>

@@ -1,7 +1,6 @@
 class AddDoctorFields2 < ActiveRecord::Migration
   def up
   	add_column :doctors, :job_title, :string
-    add_column :doctors, :address, :string
   	add_column :doctors, :department, :string
   	add_column :doctors, :record_status, :integer
   	add_column :doctors, :overall_rate, :integer

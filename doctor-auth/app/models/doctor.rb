@@ -1,5 +1,9 @@
 class Doctor < ActiveRecord::Base
 
-	attr_accessor :job_title, :department, :record_status, :overall_rate, :address
+	attr_accessible :job_title, :department, :record_status, :overall_rate, :address, :certificate, :name, :address, :phone
+
+	has_many :work_logs
+
+
 
 end
