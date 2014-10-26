@@ -19,8 +19,10 @@ body { padding: 50px 50px 50px 50px;   }
 		<div class="collapse navbar-collapse">
 			<%unless session[:user_id]%>
 				<ul class="nav navbar-nav navbar-right">
-					<li><%= link_to :Signup , :signup, class: "nav_links"%></li>
-					<li><%= link_to :Login , :login, class: "nav_links"%></li>	
+				<%signup=t(:signup)%>
+				<%login=t(:login)%>
+					<li><%= link_to signup , :signup, class: "nav_links"%></li>
+					<li><%= link_to login , :login, class: "nav_links"%></li>	
 				</ul>
 			<%else%>
 				<ul class="nav navbar-nav navbar-right">

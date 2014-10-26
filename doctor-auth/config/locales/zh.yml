@@ -3,10 +3,11 @@
 
 zh:
   title: 医疗人员信息黄页
-  search_tip: 输入名字查找
+  search_tip: 输入名字全称查找
   submit: 提交
   search: 给我搜
   footer_copyright: ©Powered by Ralph
+  hospital_info: 医院信息
   hospital_listing: 医院列表
   hospital_header_name: 医院名称
   hospital_header_address: 医院地址
@@ -26,6 +27,13 @@ zh:
   Doctors: 医生
   Hospitals: 医院
   Logout: 登出
+  login: 登录
+  username: 用户名
+  password: 密码
+  signup: 注册
+  email: 邮箱地址
+  password_confirmation: 密码确认
+
 
   Show: 查看
   Edit: 修改
