@@ -35,8 +35,8 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: User_Auth_production
+  database: User_Auth_Development
   pool: 5
   username: root
-  password:
+  password: root
   socket: /var/run/mysqld/mysqld.sock

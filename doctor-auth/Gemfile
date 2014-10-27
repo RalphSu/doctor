@@ -21,6 +21,7 @@ group :assets do
   gem 'bcrypt-ruby', :require => 'bcrypt' 
 end
 
+gem "bcrypt-ruby", :require => "bcrypt"
 gem 'jquery-rails'
 gem 'will_paginate', '~>3.0'
 
