@@ -29,7 +29,8 @@
     <th><%=t(:doctor_job_title)%></th>
     <th><%=t(:doctor_certificate)%></th>
     <th><%=t(:doctor_overall_rate)%></th>
-    <th width=120></th>
+    <th width=80><span class="glyphicon glyphicon-edit"></span></th>
+    <th width=40><span class="glyphicon glyphicon-warning-sign"></span></th>
   </tr>
 
 <% @doctors.each do |doctor| %>
@@ -45,7 +46,10 @@
     <% destroy=t(:Destroy)%>
     <%= link_to show, doctor %>
     <%= link_to edit, edit_doctor_path(doctor) %>
-    <%= link_to destroy, doctor, confirm: 'Are you sure?', method: :delete %></td>
+    </td>
+    <td>
+    <%= button_to destroy, doctor, confirm: 'Are you sure?', method: :delete, :class=>"btn btn-primary btn-xs" %>
+    </td>
   </tr>
 <% end %>
 <div class="digg_pagination">

@@ -13,7 +13,8 @@
   <tr>
     <th><%=t(:hospital_header_name)%></th>
     <th><%=t(:hospital_header_address)%></th>
-    <th></th>
+    <th width=80><span class="glyphicon glyphicon-edit"></span></th>
+    <th width=40><span class="glyphicon glyphicon-warning-sign"></span></th>
   </tr>
 
 <% edit_label = t(:edit)%>
@@ -22,10 +23,13 @@
   <tr>
     <td><%= hospital.name %></td>
     <td><%= hospital.address %></td>
-    <td width=120>
-    <%= link_to t(:Show), hospital %>
-    <%= link_to edit_label, edit_hospital_path(hospital) %>
-    <%= link_to destroy_label, hospital, confirm: 'Are you sure?', :method=> :delete %></td>
+    <td>
+      <%= link_to t(:Show), hospital %>
+      <%= link_to edit_label, edit_hospital_path(hospital) %>
+    </td>
+    <td>
+          <%= button_to destroy_label, hospital, confirm: 'Are you sure?', :method=> :delete, :class=>"btn btn-primary btn-xs" %>
+    </td>
   </tr>
 <% end %>
 </table>
