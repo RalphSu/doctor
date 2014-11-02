@@ -30,20 +30,29 @@
 		  <b><%=t(:doctor_department)%>: </b>
 		  <%= @doctor.department %>
 		</p>
+		<p>
+		  <b><%=t(:doctor_record_status)%>: </b>
+		  <%= @doctor.record_status %>
+		</p>
 
+		<p>
+		  <b><%=t(:doctor_overall_rate)%>: </b>
+		  <%= @doctor.overall_rate %>
+		</p>
+		<!-- work logs listing -->
+		<b><%=t(:doctor_work_log)%>: </b>
 		<div class="panel panel-primary">
 			<div class="panel-body">
-				<p>
-				  <b><%=t(:doctor_record_status)%>: </b>
-				  <%= @doctor.record_status %>
-				</p>
-
-				<p>
-				  <b><%=t(:doctor_overall_rate)%>: </b>
-				  <%= @doctor.overall_rate %>
-				</p>
+				<%@doctor.work_logs.each do |e|%>
+					<%= e.hosipital_name %>
+					<%= e.start_date %>
+					<%= e.end_date %>
+					<%= e.title %>
+					<%= e.rate %>
+				<%end%>
 			</div>
 		</div>
+
 	</div>
 </div>
 

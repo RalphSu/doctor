@@ -16,7 +16,11 @@ body { padding: 50px 50px 50px 50px;   }
 <body>
 	<nav class="navbar navbar-fixed-top navbar-inverse">
 		<div class="container-fluid">
-			<p class="navbar-brand"><%=t(:title)%></p>
+
+			   <a class="navbar-brand glyphicon glyphicon-eye-open" href="/">
+		        	<%=t(:title)%>
+		      </a>
+
 		<div class="collapse navbar-collapse">
 			<%unless session[:user_id]%>
 				<ul class="nav navbar-nav navbar-right">
