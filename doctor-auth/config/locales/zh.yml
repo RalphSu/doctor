@@ -48,6 +48,7 @@ zh:
   doctor_department: 科室
   doctor_record_status: 认证？
   doctor_overall_rate: 总评
+  confirm_delete_label: 确认删除？
 
   helpers:
     label:
@@ -56,7 +57,7 @@ zh:
         address: 医院地址
         create: 新建医院
       doctor:
-        name: 名称
+        name: 名字
         address: 地址
         phone: 电话
         certificate: 证书

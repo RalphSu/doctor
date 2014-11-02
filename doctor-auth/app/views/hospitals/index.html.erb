@@ -28,7 +28,7 @@
       <%= link_to edit_label, edit_hospital_path(hospital) %>
     </td>
     <td>
-          <%= button_to destroy_label, hospital, confirm: 'Are you sure?', :method=> :delete, :class=>"btn btn-primary btn-xs" %>
+          <%= button_to destroy_label, hospital, { confirm: 'Are you sure?', :method=>:delete, :class=>"btn btn-primary btn-xs", :onclick => "return confirm('确认删除？')", :remote => true } %>
     </td>
   </tr>
 <% end %>

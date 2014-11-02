@@ -48,7 +48,7 @@
     <%= link_to edit, edit_doctor_path(doctor) %>
     </td>
     <td>
-    <%= button_to destroy, doctor, confirm: 'Are you sure?', method: :delete, :class=>"btn btn-primary btn-xs" %>
+    <%= button_to destroy, doctor, { confirm: 'Are you sure?', :method=>:delete, :class=>"btn btn-primary btn-xs", :onclick => "return confirm('确认删除？')", :remote => true }  %>
     </td>
   </tr>
 <% end %>
